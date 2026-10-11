@@ -1,0 +1,24 @@
+.home-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.project-image {
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-image--upcoming {
+    filter: grayscale(100%);
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}

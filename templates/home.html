@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <img src="{% static 'images/data_science_4.png' %}"
+         alt="Data Science Projects"
+         class="home-banner">
+</div>
+
+<div class="container">
+
+    <h2 class="mt-3 mb-4 text-center fw-bold text-dark">
+        Dostępne projekty ML
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- KAFEL 1: PROJEKT IRIS -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm project-card border-0">
+                <img src="{% static 'images/irys.png' %}"
+                     class="card-img-top rounded-top project-image"
+                     alt="Kwiaty Iris">
+
+                <div class="card-body d-flex flex-column bg-white rounded-bottom">
+                    <h5 class="card-title fw-bold">Klasyfikacja Iris 🌸</h5>
+                    <p class="card-text text-muted small">Przewidywanie gatunku kosaćca na podstawie wymiarów geometrycznych płatków przy użyciu modelu Random Forest.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">Model gotowy (100%)</span>
+                    </div>
+                    <a href="/iris/" class="btn btn-primary mt-auto w-100 fw-semibold">Uruchom projekt</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- KAFEL 2: PROJEKT TITANIC -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm project-card border-0 opacity-75">
+                <img src="{% static 'images/titanic.png' %}"
+                    class="card-img-top rounded-top project-image project-image--upcoming"
+                    alt="Titanic">
+
+                <div class="card-body d-flex flex-column bg-white rounded-bottom">
+                    <h5 class="card-title fw-bold text-secondary">Katastrofa Titanic 🚢</h5>
+                    <p class="card-text text-muted small">Przewidywanie szans na przetrwanie pasażerów legendarnego statku na podstawie danych socjodemograficznych.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Wkrótce...</span>
+                    </div>
+                    <button class="btn btn-secondary mt-auto w-100 fw-semibold" disabled>W przygotowaniu</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
