@@ -1,0 +1,140 @@
+.iris-page {
+    position: relative;
+    isolation: isolate;
+    padding: 40px 0 70px;
+    background: #f5f7fa;
+    color: #172536;
+}
+
+.iris-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("../images/tlo_irys_1.png") top center / 100% auto repeat-y;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.iris-back {
+    color: #087cff;
+    text-decoration: none;
+}
+
+.iris-back:hover {
+    text-decoration: underline;
+}
+
+.iris-heading {
+    margin: 28px 0;
+}
+
+.iris-heading h1 {
+    font-family: "Oxanium", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+}
+
+.iris-heading p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.iris-panel {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #e7edf5;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(20, 45, 80, 0.05);
+}
+
+.iris-panel h2 {
+    margin-bottom: 24px;
+    font-family: "Oxanium", sans-serif;
+    font-size: 1.5rem;
+}
+
+.iris-panel .form-control {
+    min-height: 48px;
+    border-color: #d6dfeb;
+}
+
+.iris-hint {
+    margin: 28px 0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.iris-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.iris-actions > .btn {
+    flex: 1;
+    padding: 13px 18px;
+}
+
+.iris-result-label {
+    color: #64748b;
+}
+
+.iris-result .iris-species {
+    color: #087cff;
+    font-size: 2rem;
+}
+
+.iris-result-image {
+    display: block;
+    width: 100%;
+    height: 230px;
+    margin-bottom: 18px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.iris-model {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #edf5ff;
+    color: #456184;
+    font-size: 0.85rem;
+}
+
+.iris-info {
+    margin-top: 24px;
+}
+
+.iris-info p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.iris-info p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 575px) {
+    .iris-panel {
+        padding: 22px;
+    }
+
+    .iris-actions {
+        flex-direction: column;
+    }
+}
+
+.iris-examples {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.iris-examples span {
+    width: 100%;
+    color: #64748b;
+    font-size: 0.9rem;
+}
