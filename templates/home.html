@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <img src="{% static 'images/data_science_4.png' %}"
+         alt="Data Science Projects"
+         class="home-banner">
+</div>
+
+<section class="projects-section">
+
+    <div class="container" id="projekty">
+
+    <h2 class="projects-title text-center">
+        Moje projekty Machine Learning
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- KAFEL 1: PROJEKT IRIS -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm project-card border-0">
+                <img src="{% static 'images/irys.png' %}"
+                     class="card-img-top rounded-top project-image"
+                     alt="Kwiaty Iris">
+
+                <div class="card-body d-flex flex-column bg-white rounded-bottom">
+                    <h5 class="card-title fw-bold">Klasyfikacja kwiatów Iris</h5>
+                    <p class="card-text text-muted small">
+                        Przewidywanie gatunku irysa na podstawie wymiarów geometrycznych
+                        płatków przy użyciu modelu Random Forest.
+                    </p>
+                    <div class="mb-3">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">Model gotowy (100%)</span>
+                    </div>
+                    <a href="/iris/" class="btn btn-primary mt-auto w-100 fw-semibold">Uruchom projekt</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- KAFEL 2: PROJEKT TITANIC -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm project-card border-0 opacity-75">
+                <img src="{% static 'images/titanic.png' %}"
+                    class="card-img-top rounded-top project-image project-image--upcoming"
+                    alt="Titanic">
+
+                <div class="card-body d-flex flex-column bg-white rounded-bottom">
+                    <h5 class="card-title fw-bold text-secondary">Katastrofa Titanic</h5>
+                    <p class="card-text text-muted small">
+                        Sprawdź, jak wiek, płeć i klasa podróży wpływały na szanse przeżycia katastrofy Titanica.
+                    </p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Wkrótce...</span>
+                    </div>
+                    <button class="btn btn-secondary mt-auto w-100 fw-semibold" disabled>W przygotowaniu</button>
+                </div>
+            </div>
+        </div>
+{% comment %}
+        <!-- KAFEL 3: HOMECHOICE AI -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm project-card border-0">
+                <img src="{% static 'images/homechoiceai_1.png' %}"
+                    class="card-img-top rounded-top project-image"
+                    alt="HomeChoice AI — analiza cen mieszkań">
+
+                <div class="card-body d-flex flex-column bg-white rounded">
+                    <h5 class="card-title fw-bold">HomeChoice AI</h5>
+
+                    <p class="card-text text-muted small">
+                        Analiza ofert mieszkań: porównywanie cen za m²
+                        z medianą dla miasta, filtrowanie ofert
+                        i ocena ich atrakcyjności cenowej.
+                    </p>
+
+                    <div class="mb-3">
+                        <span class="badge bg-success-subtle text-success border border-success-subtle">
+                            Projekt gotowy
+                        </span>
+                    </div>
+
+                    <a href="https://github.com/piotrgolebiewski07/homechoice_ai"
+                       class="btn btn-primary mt-auto w-100 fw-semibold"
+                       target="_blank" rel="noopener noreferrer">
+                        Zobacz projekt ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- KAFEL 4: ROZPOZNAWANIE CYFR -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm project-card border-0 opacity-75">
+                <img src="{% static 'images/cyfry.png' %}"
+                    class="card-img-top rounded-top project-image project-image--upcoming"
+                    alt="Rozpoznawanie ręcznie pisanych cyfr">
+
+                <div class="card-body d-flex flex-column bg-white rounded">
+                    <h5 class="card-title fw-bold text-secondary">
+                        Rozpoznawanie cyfr 🔢
+                    </h5>
+
+                    <p class="card-text text-muted small">
+                        Narysuj cyfrę i sprawdź, czy sieć neuronowa ją rozpozna.
+                        Model trenowany na zbiorze ręcznie pisanych cyfr MNIST.
+                    </p>
+
+                    <div class="mb-3">
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">
+                            Wkrótce...
+                        </span>
+                    </div>
+
+                    <button class="btn btn-secondary mt-auto w-100 fw-semibold" disabled>
+                        W przygotowaniu
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- KAFEL 5: ANALIZA OPINII -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm project-card border-0 opacity-75">
+                <img src="{% static 'images/analiza_opinii.png' %}"
+                    class="card-img-top rounded-top project-image project-image--upcoming"
+                    alt="Analiza opinii">
+                <div class="card-body d-flex flex-column bg-white rounded">
+                    <h5 class="card-title fw-bold text-secondary">
+                        Analiza opinii 💬
+                    </h5>
+
+                    <p class="card-text text-muted small">
+                        Wpisz opinię i sprawdź jej wydźwięk.
+                        Model analizuje tekst i klasyfikuje go jako pozytywny lub negatywny.
+                    </p>
+
+                    <div class="mb-3">
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">
+                            Wkrótce...
+                        </span>
+                    </div>
+
+                    <button class="btn btn-secondary mt-auto w-100 fw-semibold" disabled>
+                        W przygotowaniu
+                    </button>
+                </div>
+            </div>
+        </div>
+{% endcomment %}
+
+    </div>
+</div>
+</section>
+{% endblock %}

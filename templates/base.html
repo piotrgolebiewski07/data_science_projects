@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Portfolio</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}
+    {% endblock %}
+</head>
+
+<body>
+
+<!-- MENU GÓRNE (NAVBAR) -->
+<nav class="portfolio-nav">
+    <div class="portfolio-nav-inner">
+        <a class="portfolio-brand" href="{% url 'main_home' %}">
+            <img src="{% static 'images/siec_5.png' %}" class="portfolio-logo" alt="">
+            <span>Piotr Gołębiewski</span>
+        </a>
+
+        <div class="portfolio-links">
+            <span class="menu-frame" aria-hidden="true"></span>
+
+            <a href="{% url 'main_home' %}#projekty">Projekty</a>
+            <a href="{% url 'main_home' %}#o-mnie">O mnie</a>
+            <a href="https://github.com/piotrgolebiewski07"
+               target="_blank" rel="noopener noreferrer">
+                GitHub ↗
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- MIEJSCE NA TREŚĆ PODSTRON -->
+{% block content %}
+{% endblock %}
+
+<!-- STOPKA -->
+<footer class="text-center py-3 text-muted bg-white border-top">
+    <p>&copy; {% now "Y" %} Piotr Gołębiewski · Machine Learning Portfolio</p>
+</footer>
+
+<script>
+    const menu = document.querySelector(".portfolio-links");
+    const frame = menu.querySelector(".menu-frame");
+    const links = [...menu.querySelectorAll("a")];
+    let active = links.find(link => link.hash && link.hash === location.hash) || links.at(-1);
+
+    function move(link) {
+        frame.style.width = `${link.offsetWidth}px`;
+        frame.style.transform = `translateX(${link.offsetLeft}px)`;
+        frame.style.opacity = 1;
+    }
+
+    links.forEach(link => {
+        link.onmouseenter = link.onfocus = () => move(link);
+        link.onclick = () => {
+            active = link;
+            move(active);
+        };
+    });
+
+    menu.onmouseleave = window.onresize = () => move(active);
+    move(active);
+</script>
+
+</body>
+</html>
